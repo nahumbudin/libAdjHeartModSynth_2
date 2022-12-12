@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{CC450782-46A2-4997-A037-7AF590EECEF6}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <ToolchainID>com.visualgdb.raspberry_pi</ToolchainID>
+    <ToolchainVersion>8.3.0/8.2.1/r3</ToolchainVersion>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainID>com.visualgdb.raspberry_pi</ToolchainID>
+    <ToolchainVersion>8.3.0/8.2.1/r3</ToolchainVersion>
+    <GNUTargetType>StaticLibrary</GNUTargetType>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+      <AdditionalIncludeDirectories>=/usr/include/glib-2.0;=/usr/lib/arm-linux-gnueabihf/glib-2.0/include;=/home/pi/bluez-5.43;=/usr/include/bluetooth;=/usr/lib/gcc/arm-linux-gnueabihf/8/include;=/usr/local/include;=/usr/lib/gcc/arm-linux-gnueabihf/8;../../cpu-stat-master/src;../../../bse;audio;jack;../../../FilesFromPi/bluez-5.43/lib;../../MySynthFloat;../lib1tmp_20200103;synthesizer;=/usr/include;=/usr/include/c++/8;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG=1;OMP_PLACES=cores; OMP_STACKSIZE=100000000;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions />
+      <CLanguageStandard />
+    </ClCompile>
+    <Link>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LibrarySearchDirectories>=/usr/lib;=/home/pi/alsa-lib-1.1.4;=/lib/arm-linux-gnueabihf;=/usr/local/lib;C:/SysGCC/Raspberry/rm-linux-gnueabihf/sysroot/usr/lib/arm-linux-gnueabihf/jack;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>fluidsynth;glib-2.0;pthread;bluetooth;jack;asound;fftw3;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <LinkerScript />
+      <AdditionalOptions />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ClCompile>
+      <CPPLanguageStandard>CPP1Z</CPPLanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\RS232lib\adjRS232.cpp" />
+    <ClCompile Include="alsa\alsaAudioHandling.cpp" />
+    <ClCompile Include="alsa\alsaBtClientOutput.cpp" />
+    <ClCompile Include="alsa\alsaMidi.cpp" />
+    <ClCompile Include="alsa\alsaMidiSequencerClient.cpp" />
+    <ClCompile Include="alsa\alsaMidiSequencerEventsHandler.cpp" />
+    <ClCompile Include="alsa\alsaSerialPortClientOutput.cpp" />
+    <ClCompile Include="alsa\alsaMidiSystemControl.cpp" />
+    <ClCompile Include="audio\audioBandEqualizer.cpp" />
+    <ClCompile Include="audio\audioBlock.cpp" />
+    <ClCompile Include="audio\audioManager.cpp" />
+    <ClCompile Include="audio\audioOutput.cpp" />
+    <ClCompile Include="audio\audioPoliphonyMixer.cpp" />
+    <ClCompile Include="audio\audioReverb.cpp" />
+    <ClCompile Include="audio\audioVoice.cpp" />
+    <ClCompile Include="bluetooth\rspiBluetoothServicesQueuesVer.cpp" />
+    <ClCompile Include="cpuUtilizaion\CPUData.cpp" />
+    <ClCompile Include="cpuUtilizaion\CPUSnapshot.cpp" />
+    <ClCompile Include="dsp\dspAdsr.cpp" />
+    <ClCompile Include="dsp\dspAmp.cpp" />
+    <ClCompile Include="dsp\dspBandEqualizer.cpp" />
+    <ClCompile Include="dsp\dspDistortion.cpp" />
+    <ClCompile Include="dsp\dspFilter.cpp" />
+    <ClCompile Include="dsp\dspFreeverb3mod2.cpp" />
+    <ClCompile Include="dsp\dspKarplusStrong.cpp" />
+    <ClCompile Include="dsp\dspMorphedSineOsc.cpp" />
+    <ClCompile Include="dsp\dspNoise.cpp" />
+    <ClCompile Include="dsp\dspOsc.cpp" />
+    <ClCompile Include="dsp\dspReverbAllpass.cpp" />
+    <ClCompile Include="dsp\dspReverbComb.cpp" />
+    <ClCompile Include="dsp\dspReverbModel.cpp" />
+    <ClCompile Include="dsp\dspSampleHoldWaveGenerator.cpp" />
+    <ClCompile Include="dsp\dspSineWaveGenerator.cpp" />
+    <ClCompile Include="dsp\dspSquareWaveGenerator.cpp" />
+    <ClCompile Include="dsp\dspTriangleWaveGenerator.cpp" />
+    <ClCompile Include="dsp\dspVoice.cpp" />
+    <ClCompile Include="dsp\dspVoiceAmp.cpp" />
+    <ClCompile Include="dsp\dspVoiceDistortion.cpp" />
+    <ClCompile Include="dsp\dspVoiceFilters.cpp" />
+    <ClCompile Include="dsp\dspVoiceKarplusStrong.cpp" />
+    <ClCompile Include="dsp\dspVoiceLfos.cpp" />
+    <ClCompile Include="dsp\dspVoiceMso.cpp" />
+    <ClCompile Include="dsp\dspVoiceNoise.cpp" />
+    <ClCompile Include="dsp\dspVoiceOscilators.cpp" />
+    <ClCompile Include="dsp\dspVoicePad.cpp" />
+    <ClCompile Include="dsp\dspWavetable.cpp" />
+    <ClCompile Include="dsp\dspWaveformTable.cpp" />
+    <ClCompile Include="jack\jackAudioClients.cpp" />
+    <ClCompile Include="jack\JackConfigurationFile.cpp" />
+    <ClCompile Include="jack\jackConnections.cpp" />
+    <ClCompile Include="libAdjHeartModSynth_2.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getAmpParams.cpp" />
+    <ClCompile Include="LibAPI\libAPI_getDistortionParams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getEqualizerParams.cpp" />
+    <ClCompile Include="LibAPI\libAPI_getFiltersParams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getKarplusParams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getKeyboardParameters.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getMidiMixerParams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getMinMaxParams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getModulatorsParams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getMSOparams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getNoiseParams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getOSCsParams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getPADparams.cpp" />
+    <ClCompile Include="LibAPI\LibAPI_getReverbParams.cpp" />
+    <ClCompile Include="midi\midiAlsaQclient.cpp" />
+    <ClCompile Include="midi\midiControlMapper.cpp" />
+    <ClCompile Include="midi\midiHandler.cpp" />
+    <ClCompile Include="midi\midiParser.cpp" />
+    <ClCompile Include="midi\midiStream.cpp" />
+    <ClCompile Include="serialPort\serialPort.cpp" />
+    <ClCompile Include="synthesizer\adjSynth.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsAmp.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsDistortion.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsFilter.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsKPS.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsModulators.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsMSO.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsNoise.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsPAD.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultPatchParamsVCO.cpp" />
+    <ClCompile Include="synthesizer\modSynthDefaultSettingsParamsAudio.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultSettingsParamsEqualizer.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultSettingsParamsKeyboard.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultSettingsParamsMixer.cpp" />
+    <ClCompile Include="synthesizer\adjSynthDefaultSettingsParamsReverb.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingAmp.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingAudio.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingDistortion.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingEqualizer.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingFilter.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingKeyboard.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingKPS.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingMixer.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingModulators.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingMSO.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingNoise.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingPAD.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingReverb.cpp" />
+    <ClCompile Include="synthesizer\adjSynthEventsHandlingVCO.cpp" />
+    <ClCompile Include="synthesizer\adjSynthPADcreator.cpp" />
+    <ClCompile Include="synthesizer\adjSynthPolyphony.cpp" />
+    <ClCompile Include="synthesizer\adjSynthProgram.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSetHammondPercussionMode.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksAudio.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksDistortion.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksEqualizer.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksKeyboard.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksMisc.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksMixer.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksReverb.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoiceAmp.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoiceDistortion.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoiceFilter.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoiceKPS.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoiceModulators.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoiceMSO.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoiceNoise.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoicePAD.cpp" />
+    <ClCompile Include="synthesizer\adjSynthSettingsCallbacksVoiceVCO.cpp" />
+    <ClCompile Include="synthesizer\adjSynthVoice.cpp" />
+    <ClCompile Include="synthesizer\fluidSynthEventsHandling.cpp" />
+    <ClCompile Include="synthesizer\fluidSynthInterface.cpp" />
+    <ClCompile Include="synthesizer\modSynth.cpp" />
+    <ClCompile Include="synthesizer\modSynthCollectPresetParams.cpp" />
+    <ClCompile Include="synthesizer\modSynthDefaultPresetParams.cpp" />
+    <ClCompile Include="synthesizer\modSynthDefaultSettingsParams.cpp" />
+    <ClCompile Include="synthesizer\modSynthExecuteControl.cpp" />
+    <ClCompile Include="synthesizer\ModSynthPreset.cpp" />
+    <ClCompile Include="synthesizer\modSynthPresetCallbacks.cpp" />
+    <ClCompile Include="synthesizer\synthKeyboard.cpp" />
+    <ClCompile Include="synthesizer\synthSettings.cpp" />
+    <ClCompile Include="synthesizer\synthSettingsFiles.cpp" />
+    <ClCompile Include="utils\FFTwrapper.cpp" />
+    <ClCompile Include="utils\utils.cpp" />
+    <ClCompile Include="utils\XMLfiles.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\RS232lib\adjRS232.h" />
+    <ClInclude Include="alsa\alsaAudioHandling.h" />
+    <ClInclude Include="alsa\alsaBtClientOutput.h" />
+    <ClInclude Include="alsa\alsaMidi.h" />
+    <ClInclude Include="alsa\alsaMidiSequencerClient.h" />
+    <ClInclude Include="alsa\alsaMidiSequencerEventsHandler.h" />
+    <ClInclude Include="alsa\alsaSerialPortClientOutput.h" />
+    <ClInclude Include="alsa\alsaMidiSystemControl.h" />
+    <ClInclude Include="audio\audioBandEqualizer.h" />
+    <ClInclude Include="audio\audioBlock.h" />
+    <ClInclude Include="audio\audioCommon.h" />
+    <ClInclude Include="audio\audioManager.h" />
+    <ClInclude Include="audio\audioOutput.h" />
+    <ClInclude Include="audio\audioPoliphonyMixer.h" />
+    <ClInclude Include="audio\audioReverb.h" />
+    <ClInclude Include="audio\audioVoice.h" />
+    <ClInclude Include="bluetooth\rspiBluetoothServicesQueuesVer.h" />
+    <ClInclude Include="commonDefs.h" />
+    <ClInclude Include="cpuUtilizaion\CPUData.h" />
+    <ClInclude Include="cpuUtilizaion\CPUSnapshot.h" />
+    <ClInclude Include="dsp\dspBandEqualizer.h" />
+    <ClInclude Include="dsp\dspAdsr.h" />
+    <ClInclude Include="dsp\dspAmp.h" />
+    <ClInclude Include="dsp\dspDistortion.h" />
+    <ClInclude Include="dsp\dspFilter.h" />
+    <ClInclude Include="dsp\dspFreeverb3mod2.h" />
+    <ClInclude Include="dsp\dspKarplusStrong.h" />
+    <ClInclude Include="dsp\dspMorphedSineOsc.h" />
+    <ClInclude Include="dsp\dspNoise.h" />
+    <ClInclude Include="dsp\dspOsc.h" />
+    <ClInclude Include="dsp\dspReverbComb.h" />
+    <ClInclude Include="dsp\dspReverbModel.h" />
+    <ClInclude Include="dsp\dspReverbTuning.h" />
+    <ClInclude Include="dsp\dspSampleHoldWaveGenerator.h" />
+    <ClInclude Include="dsp\dspSineWaveGenerator.h" />
+    <ClInclude Include="dsp\dspSquareWaveGenerator.h" />
+    <ClInclude Include="dsp\dspTriangleWaveGenerator.h" />
+    <ClInclude Include="dsp\dspVoice.h" />
+    <ClInclude Include="dsp\dspWaveformTable.h" />
+    <ClInclude Include="dsp\dspWavetable.h" />
+    <ClInclude Include="dsp\dspReverbAllpass.h" />
+    <ClInclude Include="jack\jackAudioClients.h" />
+    <ClInclude Include="jack\JackConfigurationFile.h" />
+    <ClInclude Include="jack\jackConnections.h" />
+    <ClInclude Include="libAdjHeartModSynth_2.h" />
+    <ClInclude Include="LibAPI\LibAPI_settingsManager.h" />
+    <ClInclude Include="midi\midiAlsaQclient.h" />
+    <ClInclude Include="midi\midiControlMapper.h" />
+    <ClInclude Include="midi\midiHandler.h" />
+    <ClInclude Include="midi\midiParser.h" />
+    <ClInclude Include="midi\midiStream.h" />
+    <ClInclude Include="misc\priorities.h" />
+    <ClInclude Include="serialPort\serialPort.h" />
+    <ClInclude Include="synthesizer\adjSynth.h" />
+    <ClInclude Include="synthesizer\adjSynthPADcreator.h" />
+    <ClInclude Include="synthesizer\adjSynthPolyphony.h" />
+    <ClInclude Include="synthesizer\adjSynthProgram.h" />
+    <ClInclude Include="synthesizer\adjSynthVoice.h" />
+    <ClInclude Include="synthesizer\fluidSynthInterface.h" />
+    <ClInclude Include="synthesizer\modSynth.h" />
+    <ClInclude Include="synthesizer\modSynthPreset.h" />
+    <ClInclude Include="synthesizer\synthSettings.h" />
+    <ClInclude Include="synthesizer\synthKeyboard.h" />
+    <ClInclude Include="utils\FFTwrapper.h" />
+    <ClInclude Include="utils\log.h" />
+    <ClInclude Include="utils\safeQueues.h" />
+    <ClInclude Include="utils\utils.h" />
+    <ClInclude Include="utils\XMLfiles.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libAdjHeartModSynth_2-Debug.vgdbsettings" />
+    <None Include="libAdjHeartModSynth_2-Release.vgdbsettings" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libAdjHeartModSynth_2", "libAdjHeartModSynth_2.vcxproj", "{CC450782-46A2-4997-A037-7AF590EECEF6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC450782-46A2-4997-A037-7AF590EECEF6}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{CC450782-46A2-4997-A037-7AF590EECEF6}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{CC450782-46A2-4997-A037-7AF590EECEF6}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{CC450782-46A2-4997-A037-7AF590EECEF6}.Release|VisualGDB.Build.0 = Release|VisualGDB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE1BDDB4-B12C-409C-AB41-A97620352BAB}
+	EndGlobalSection
+EndGlobal
