@@ -68,7 +68,7 @@ The AdjSynth Synthesizer provides the user with editing, management and configur
 
 ![ALT](https://www.adjheart.com/uploads/3/4/3/9/3439775/published/adjmodsynth-classes.jpg?1593529838)
 
-## Sample Screenshots
+## Sample Screenshots (see AdjModSynth_2 - GUI project)
 
 ![ALT](https://www.adjheart.com/uploads/3/4/3/9/3439775/maintabmarkeddark_orig.png)
   
